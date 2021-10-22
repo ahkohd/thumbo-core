@@ -4,19 +4,9 @@
 
 extern crate wasm_bindgen_test;
 
-use image;
-use std::env;
 use wasm_bindgen_test::*;
 
 wasm_bindgen_test_configure!(run_in_browser);
-
-fn abs_path(path: &str) -> String {
-    format!(
-        "{}/tests/{}",
-        str::replace(env::current_dir().unwrap().to_str().unwrap(), "\"", ""),
-        path
-    )
-}
 
 #[wasm_bindgen_test]
 fn test_thumbnail() {
