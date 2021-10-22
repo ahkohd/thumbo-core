@@ -1,7 +1,7 @@
 mod utils;
 use image;
 use wasm_bindgen::prelude::*;
-use webp;
+// use webp;
 
 // When the `wee_alloc` feature is enabled, use `wee_alloc` as the global
 // allocator.
@@ -14,7 +14,6 @@ pub enum ImageFormat {
     Png,
     Jpeg,
     Gif,
-    WebP,
     Ico,
 }
 
@@ -24,7 +23,6 @@ impl ImageFormat {
             ImageFormat::Png => image::ImageFormat::Png,
             ImageFormat::Jpeg => image::ImageFormat::Jpeg,
             ImageFormat::Gif => image::ImageFormat::Gif,
-            ImageFormat::WebP => image::ImageFormat::WebP,
             ImageFormat::Ico => image::ImageFormat::Ico,
         }
     }
@@ -41,16 +39,6 @@ pub fn thumbnail(image_bytes: Vec<u8>, format: ImageFormat, width: u32, height: 
 
 pub fn encode_img(img: &image::DynamicImage, format: ImageFormat) -> Vec<u8> {
     let mut result = vec![];
-
-    match format {
-        ImageFormat::WebP => {
-            result = webp::Encoder::from_image(img)
-                .unwrap()
-                .encode_lossless()
-                .to_vec()
-        }
-        _ => img.write_to(&mut result, format.to_image_format()).unwrap(),
-    }
-
+    img.write_to(&mut result, format.to_image_format()).unwrap();
     result
 }
