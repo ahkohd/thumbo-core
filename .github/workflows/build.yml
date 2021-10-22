@@ -28,4 +28,4 @@ jobs:
       - name: Build
         run: wasm-pack build
       - name: Run tests
-        run: wasm-pack test --chrome --headless
+        run: wasm-pack test --chrome
