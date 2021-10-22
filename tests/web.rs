@@ -21,6 +21,9 @@ fn abs_path(path: &str) -> String {
 #[wasm_bindgen_test]
 fn test_thumbnail() {
     let img_bytes = image::open(abs_path("./test.png")).unwrap().to_bytes();
-    let thumbnail = thumbo_core::thumbnail(img_bytes, thumbo_core::ImageFormat::Png, 20, 20);
-    assert!(thumbnail);
+    let generated_thumbnail = thumbo_core::thumbnail(img_bytes, thumbo_core::ImageFormat::Png, 20, 20);
+
+    let existing_thumbnail = image::open(abs_path("./thumbnail.png")).unwrap().to_bytes();
+
+    assert_eq!(generated_thumbnail, existing_thumbnail);
 }
