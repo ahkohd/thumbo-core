@@ -13,7 +13,7 @@ fn test_thumbnail() {
     let img_bytes = sample_image();
     let generated_thumbnail =
         thumbo_core::thumbnail(img_bytes, thumbo_core::ImageFormat::Png, 20, 20);
-    assert_eq!(generated_thumbnail, expected_thumbnail_bytes());
+    assert_eq!(generated_thumbnail, expected_thumbnail());
 }
 
 fn sample_image() -> Vec<u8> {
