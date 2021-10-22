@@ -1,7 +1,6 @@
 mod utils;
 use image;
 use wasm_bindgen::prelude::*;
-// use webp;
 
 // When the `wee_alloc` feature is enabled, use `wee_alloc` as the global
 // allocator.
