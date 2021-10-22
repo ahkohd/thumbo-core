@@ -1,0 +1,31 @@
+name: Build & Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install 1.55.0
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: 1.55.0
+          override: true
+          components: rustfmt, clippy
+      - uses: nanasess/setup-chromedriver@master
+      - name: Install WASM Pack
+        run: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh -s -- -f
+      - name: Build
+        run: wasm-pack build
+      - name: Run tests
+        run: wasm-pack test --chrome --headless
