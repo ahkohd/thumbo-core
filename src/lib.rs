@@ -1,6 +1,7 @@
 mod utils;
-use wasm_bindgen::prelude::*;
 use image;
+use wasm_bindgen::prelude::*;
+use webp;
 
 // When the `wee_alloc` feature is enabled, use `wee_alloc` as the global
 // allocator.
@@ -17,7 +18,7 @@ pub enum ImageFormat {
     Ico,
 }
 
-impl ImageFormat  {
+impl ImageFormat {
     pub fn to_image_format(&self) -> image::ImageFormat {
         match self {
             ImageFormat::Png => image::ImageFormat::Png,
@@ -29,11 +30,27 @@ impl ImageFormat  {
     }
 }
 
-#[wasm_bindgen(js_name = resizeImage)]
-pub fn resize_image(image_bytes: Vec<u8>, format: ImageFormat, size: u32) -> Vec<u8> {
+#[wasm_bindgen]
+pub fn thumbnail(image_bytes: Vec<u8>, format: ImageFormat, width: u32, height: u32) -> Vec<u8> {
     utils::set_panic_hook();
+    let img = image::load_from_memory_with_format(&image_bytes, format.to_image_format())
+        .expect("Error: Unable to load image");
+    let resized_img = img.thumbnail(width, height);
+    encode_img(&resized_img, format)
+}
 
-    let img = image::load_from_memory_with_format(&image_bytes, format.to_image_format()).unwrap();
-    let result = image::imageops::resize(&img, size, size,  image::imageops::FilterType::Nearest);
-    result.to_vec()
+pub fn encode_img(img: &image::DynamicImage, format: ImageFormat) -> Vec<u8> {
+    let mut result = vec![];
+
+    match format {
+        ImageFormat::WebP => {
+            result = webp::Encoder::from_image(img)
+                .unwrap()
+                .encode_lossless()
+                .to_vec()
+        }
+        _ => img.write_to(&mut result, format.to_image_format()).unwrap(),
+    }
+
+    result
 }
