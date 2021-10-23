@@ -44,9 +44,9 @@ document.getElementById("img").src = url;
 
 ### <span id="thumbo_image_format">`thumbo.ImageFormat`</span>
 
-An enum of image formats supported by `thumbo-core`.
+An enum of image formats supported by `thumbo-core.`
 
-### <span id="valencygetfn">thumbo.thumbnail(image_buffer: [Uint8Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array), format: [thumbo.ImageFormat](#thumbo_image_format), width, height)</span>
+### <span id="thumbo_thumbnail">thumbo.thumbnail(image_buffer: [Uint8Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array), format: [thumbo.ImageFormat](#thumbo_image_format), width, height)</span>
 
 Creates a thumbnail from the provided image buffer.
 
