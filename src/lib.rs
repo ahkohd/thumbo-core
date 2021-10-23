@@ -60,8 +60,8 @@ pub fn thumbnail_from_memory(
     utils::set_panic_hook();
     let result = generate_thumbnail(image_buffer, format, width, height);
     Result {
+        img_size: result.len(),
         img_ptr: result.as_ptr(),
-        img_size: result.to_vec().len(),
     }
 }
 
