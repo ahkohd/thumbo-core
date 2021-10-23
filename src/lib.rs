@@ -28,9 +28,9 @@ impl ImageFormat {
 }
 
 #[wasm_bindgen]
-pub fn thumbnail(image_bytes: Vec<u8>, format: ImageFormat, width: u32, height: u32) -> Vec<u8> {
+pub fn thumbnail(image_buffer: Vec<u8>, format: ImageFormat, width: u32, height: u32) -> Vec<u8> {
     utils::set_panic_hook();
-    let img = image::load_from_memory_with_format(&image_bytes, format.to_image_format())
+    let img = image::load_from_memory_with_format(&image_buffer, format.to_image_format())
         .expect("Error: Unable to load image");
     let resized_img = img.thumbnail(width, height);
     encode_img(&resized_img, format)
