@@ -10,9 +10,8 @@ wasm_bindgen_test_configure!(run_in_browser);
 
 #[wasm_bindgen_test]
 fn test_thumbnail() {
-    let img_bytes = sample_image();
     let generated_thumbnail =
-        thumbo_core::thumbnail(img_bytes, thumbo_core::ImageFormat::Png, 10, 10);
+        thumbo_core::thumbnail(sample_image(), thumbo_core::ImageFormat::Png, 10, 10);
     assert_eq!(generated_thumbnail, expected_thumbnail());
 }
 
