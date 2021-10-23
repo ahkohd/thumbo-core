@@ -14,7 +14,7 @@
 
 `thumbo-core` is a thubnail library for browsers and NodeJs, built with Rust and WebAssembly in other to achieve closer to native speed!
 
-> 📣 If you plan to use `thumbo-core`, it should be used with a Webworker so you don't block the main thread! If you don't want to go through this hassle, use [thumbo](https://github.com/ahkohd/thumbo) provides a worker pool to handle thumbnail generation using `thumbo-core` out of the box.
+> 📣 If you plan to use `thumbo-core`, it should be used with a Webworker so you don't block the main thread! If you don't want to go through this hassle, use [thumbo](https://github.com/ahkohd/thumbo), it provides a worker pool to handle thumbnail generation using `thumbo-core` out of the box.
 
 ## 🚴 Usage
 
