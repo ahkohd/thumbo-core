@@ -2,7 +2,7 @@
 
   <h1><code>thumbo-core</code></h1>
 
-  <strong> 😱 Dead fast thumbnail generation on the browser & NodeJs</strong>
+  <strong> 😱 Dead fast thumbnail library for browser and NodeJs</strong>
 
   [![Build & Test](https://github.com/ahkohd/thumbo-core/actions/workflows/build.yml/badge.svg)](https://github.com/ahkohd/thumbo-core/actions/workflows/build.yml)
 
@@ -10,8 +10,9 @@
 </div>
 
 ## 🚴 Usage
+### 🧪 Sample usage
 ```ts
-import * as thumbo_core from 'thumbo-core';
+import * as thumbo from 'thumbo-core';
 
 const img = await fetch("/path/to/img.png");
 
