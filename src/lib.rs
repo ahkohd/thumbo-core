@@ -28,12 +28,23 @@ impl ImageFormat {
 }
 
 #[wasm_bindgen]
-pub fn thumbnail(image_buffer: Vec<u8>, format: ImageFormat, width: u32, height: u32) -> Vec<u8> {
+pub struct Result {
+    pub img_ptr: *const u8,
+    pub img_size: usize
+}
+
+#[wasm_bindgen]
+pub fn thumbnail(image_buffer: Vec<u8>, format: ImageFormat, width: u32, height: u32) -> Result {
     utils::set_panic_hook();
     let img = image::load_from_memory_with_format(&image_buffer, format.to_image_format())
         .expect("Error: Unable to load image");
     let resized_img = img.thumbnail(width, height);
-    encode_img(&resized_img, format)
+    let result = encode_img(&resized_img, format);
+
+    Result {
+        img_ptr: result.as_ptr(),
+        img_size: result.to_vec().len()
+    }
 }
 
 pub fn encode_img(img: &image::DynamicImage, format: ImageFormat) -> Vec<u8> {
