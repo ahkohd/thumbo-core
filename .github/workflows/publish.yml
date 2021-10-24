@@ -22,7 +22,7 @@ jobs:
           override: true
           components: rustfmt, clippy
       - name: Install WASM Pack
-          run: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh -s -- -f
+        run: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh -s -- -f
       - name: Build
         run: wasm-pack build
       - name: Re-export generated code
