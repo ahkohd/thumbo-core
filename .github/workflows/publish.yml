@@ -1,0 +1,33 @@
+name: Publish
+
+on:
+  push:
+    tags:
+      - '*'
+  pull_request:
+    tags:
+      - '*'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Rust 1.55.0
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: 1.55.0
+          override: true
+          components: rustfmt, clippy
+      - name: Install WASM Pack
+          run: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh -s -- -f
+      - name: Build
+        run: wasm-pack build
+      - name: Re-export generated code
+        run: cp ./main.js ./pkg/main.js
+      - name: Publish to NPM
+        run: wasm-pack build
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
