@@ -26,7 +26,7 @@ jobs:
       - name: Build
         run: wasm-pack build
       - name: Re-export generated code
-        run: cp main.js pkg/main.js && ls pkg
+        run: cp thumbo.js pkg/thumbo.js && ls pkg
       - name: Publish to NPM
         run: wasm-pack publish
         env:
