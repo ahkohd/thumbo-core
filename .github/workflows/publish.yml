@@ -27,7 +27,6 @@ jobs:
         run: wasm-pack build
       - name: Re-export generated code
         run: cp thumbo.js pkg/thumbo.js && ls pkg
-      - name: Publish to NPM
-        run: wasm-pack publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
