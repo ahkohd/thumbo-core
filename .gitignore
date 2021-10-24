@@ -7,3 +7,4 @@ wasm-pack.log
 /.idea
 .DS_Store
 /sample
+/node_modules
