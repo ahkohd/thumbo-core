@@ -28,6 +28,6 @@ jobs:
       - name: Re-export generated code
         run: cp ./main.js ./pkg/main.js
       - name: Publish to NPM
-        run: wasm-pack build
+        run: wasm-pack publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
