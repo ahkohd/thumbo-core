@@ -8,3 +8,4 @@ wasm-pack.log
 .DS_Store
 /sample
 /node_modules
+examples/node_modules

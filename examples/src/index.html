@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Thumbo sample</title>
+    <meta name="description" content="Thumbo example" />
+    <meta
+      name="keywords"
+      content="webpack, webpack-configuration, template, boilerplate, setup, html, css, sass, javascript"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js"
+      integrity="sha512-GMGzUEevhWh8Tc/njS0bDpwgxdCJLQBWG3Z2Ct+JGOpVnEmjvNx6ts4v6A2XJf1HOrtOsfhv3hBKpK9kE5z8AQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <h1>Thumbo sample</h1>
+    <button id="convert-wasm">Generate thumbnail with WASM (copy)</button>
+    <button id="convert-wasm-read">
+      Generate thumbnail with WASM (read from memory)
+    </button>
+    <button id="convert">Generate thumbnail without WASM</button>
+    <img id="result-wasm" />
+    <img id="result-wasm-read" />
+    <img id="result" />
+
+    <div id="stats-wasm"></div>
+    <div id="stats-wasm-read"></div>
+    <div id="stats"></div>
+
+    <div style="position: relative; height: 600px; width: 600px">
+      <canvas id="chart"></canvas>
+    </div>
+  </body>
+</html>
