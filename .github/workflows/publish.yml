@@ -28,7 +28,7 @@ jobs:
       - name: Install build script dependencies
         run: yarn
       - name: Re-export generated code
-        run: node scripts/release.js && cp re_export/thumbo.js pkg/thumbo.js && ls pkg && cat package.json
+        run: node scripts/release.js && cp re_export/thumbo.js pkg/thumbo.js && ls pkg && cat pkg/package.json
       - name: Set env
         run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
       - name: Pre-publish
