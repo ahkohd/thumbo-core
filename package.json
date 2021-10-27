@@ -2,9 +2,8 @@
   "name": "thumbo-core",
   "version": "1.0.2",
   "description": "Dead fast thumbnail library for browser and NodeJs",
-  "module": "dist/thumbo.js",
+  "module": "dist/thumbo_core.js",
   "files": [
-    "dist/**",
     "pkg/**"
   ],
   "scripts": {
@@ -29,12 +28,5 @@
   "bugs": {
     "url": "https://github.com/ahkohd/thumbo-core/issues"
   },
-  "homepage": "https://github.com/ahkohd/thumbo-core#readme",
-  "devDependencies": {
-    "@wasm-tool/wasm-pack-plugin": "^1.6.0",
-    "ts-loader": "^9.2.6",
-    "typescript": "^4.4.4",
-    "webpack": "^5.60.0",
-    "webpack-cli": "^4.9.1"
-  }
+  "homepage": "https://github.com/ahkohd/thumbo-core#readme"
 }
