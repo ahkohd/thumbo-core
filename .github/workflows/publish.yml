@@ -23,7 +23,7 @@ jobs:
       - name: Install WASM Pack
         run: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh -s -- -f
       - name: Build
-        run:  yarn && yarn build:prod
+        run:  wasm-pack build
       - name: Set ENV
         run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
       - name: Update package version
