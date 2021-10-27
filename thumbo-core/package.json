@@ -1,0 +1,44 @@
+{
+  "name": "thumbo-core",
+  "version": "1.0.2",
+  "description": "Dead fast thumbnail library for browser and NodeJs",
+  "module": "thumbo.js",
+  "files": [
+    "**/*.js",
+    "**/*.wasm",
+    "**/*.d.ts",
+    "thumbo.js",
+    "thumbo.js"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --env dev --mode development --watch",
+    "build:dev": "webpack --env dev --mode development",
+    "build:prod": "webpack --env prod --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahkohd/thumbo-core.git"
+  },
+  "keywords": [
+    "thumbnail",
+    "image",
+    "resize",
+    "rust",
+    "wasm"
+  ],
+  "author": "Victor Aremu <victor.olorunbunmi@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ahkohd/thumbo-core/issues"
+  },
+  "homepage": "https://github.com/ahkohd/thumbo-core#readme",
+  "devDependencies": {
+    "@wasm-tool/wasm-pack-plugin": "^1.6.0",
+    "text-encoding": "^0.7.0",
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.4.4",
+    "webpack": "^5.60.0",
+    "webpack-cli": "^4.9.1"
+  }
+}
