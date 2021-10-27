@@ -38,14 +38,14 @@ fn generate_thumbnail(
     encode_img(&resized_img, format)
 }
 
-#[wasm_bindgen]
-pub fn thumbnail(image_buffer: Vec<u8>, format: ImageFormat, width: u32, height: u32) -> Vec<u8> {
-    utils::set_panic_hook();
-    generate_thumbnail(image_buffer, format, width, height)
-}
-
 pub fn encode_img(img: &image::DynamicImage, format: ImageFormat) -> Vec<u8> {
     let mut result = vec![];
     img.write_to(&mut result, format.to_image_format()).unwrap();
     result
+}
+
+#[wasm_bindgen]
+pub fn thumbnail(image_buffer: Vec<u8>, format: ImageFormat, width: u32, height: u32) -> Vec<u8> {
+    utils::set_panic_hook();
+    generate_thumbnail(image_buffer, format, width, height)
 }
