@@ -1,6 +1,4 @@
-import * as thumbo from "thumbo-core";
-
-console.log(thumbo.ImageFormat.toString());
+import thumbo from "thumbo-core";
 
 const TEST_IMAGE_PATH = "../images/content/passport.jpg";
 const THUMBNAIL_SIZE = 20;
