@@ -2,14 +2,14 @@
   "name": "thumbo-core",
   "version": "1.0.5",
   "description": "Dead fast thumbnail library for browser and NodeJs",
-  "main": "./pkg/thumbo_core.js",
-  "typings": "./pkg/thumbo_core.d.ts",
+  "module": "pkg/thumbo_core.js",
+  "typings": "pkg/thumbo_core.d.ts",
   "files": [
-    "./pkg/thumbo_core.js",
-    "./pkg/thumbo_core.d.ts",
-    "./pkg/thumbo_core_bg.wasm.d.ts",
-    "./pkg/thumbo_core_bg.wasm",
-    "./pkg/thumbo_core_bg.js"
+    "pkg/thumbo_core.js",
+    "pkg/thumbo_core.d.ts",
+    "pkg/thumbo_core_bg.wasm.d.ts",
+    "pkg/thumbo_core_bg.wasm",
+    "pkg/thumbo_core_bg.js"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
