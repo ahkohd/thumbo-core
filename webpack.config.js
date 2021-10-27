@@ -3,12 +3,14 @@ const path = require("path");
 
 module.exports = () => {
   return {
-    entry: {
-      thumbo: "./thumbo-core/thumbo.ts",
-    },
+    entry: "./thumbo-core/thumbo.ts",
     output: {
       path: path.resolve(__dirname, "dist"),
-      filename: "[name].js",
+      filename: "thumbo.js",
+      library: {
+        name: "Thumbo",
+        type: "umd",
+      },
     },
     module: {
       rules: [
