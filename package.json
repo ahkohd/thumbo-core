@@ -2,7 +2,7 @@
   "name": "thumbo-core",
   "version": "1.0.5",
   "description": "Dead fast thumbnail library for browser and NodeJs",
-  "module": "dist/thumbo_core.js",
+  "module": "pkg/thumbo_core.js",
   "files": [
     "pkg/**"
   ],
