@@ -1,11 +1,12 @@
 import * as thumbo from "thumbo-core";
 
+console.log(thumbo.ImageFormat.toString());
+
 const TEST_IMAGE_PATH = "../images/content/passport.jpg";
 const THUMBNAIL_SIZE = 20;
 
 const scores = {
   "stats-wasm": [],
-  "stats-wasm-read": [],
   stats: [],
 };
 
@@ -59,34 +60,6 @@ document.getElementById("convert-wasm").addEventListener("click", async () => {
     "With WASM (clone)"
   );
 });
-
-document
-  .getElementById("convert-wasm-read")
-  .addEventListener("click", async () => {
-    const image_buffer = await fetchTestImage();
-
-    const t0 = performance.now();
-    const thumbnail_result = thumbo.thumbnailFromMemory(
-      image_buffer,
-      thumbo.ImageFormat.Jpeg,
-      THUMBNAIL_SIZE,
-      THUMBNAIL_SIZE
-    );
-    const t1 = performance.now();
-
-    const blob = new Blob([read(thumbnail_result)], { type: "image/jpg" });
-    const url = URL.createObjectURL(blob);
-    document.getElementById("result-wasm-read").src = url;
-
-    logPerformanceStats(
-      t0,
-      t1,
-      image_buffer.length,
-      blob.size,
-      "stats-wasm-read",
-      "With WASM (read from memory)"
-    );
-  });
 
 document.getElementById("convert").addEventListener("click", async () => {
   const image_buffer = await fetchTestImage();
