@@ -11,6 +11,6 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true
   },
-  "include": ["src/**/*"],
+  "include": ["thumbo-core/**/*"],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }

@@ -1,11 +1,11 @@
-/target
 **/*.rs.bk
 Cargo.lock
-bin/
-pkg/
+/bin
 wasm-pack.log
 /.idea
 .DS_Store
-/sample
+/examples/node_modules
+/target
 /node_modules
-examples/node_modules
+/pkg
+/dist

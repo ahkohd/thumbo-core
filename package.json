@@ -2,13 +2,9 @@
   "name": "thumbo-core",
   "version": "1.0.2",
   "description": "Dead fast thumbnail library for browser and NodeJs",
-  "module": "thumbo.js",
+  "module": "dist/thumbo.js",
   "files": [
-    "**/*.js",
-    "**/*.wasm",
-    "**/*.d.ts",
-    "thumbo.js",
-    "thumbo.js"
+    "pkg/**"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
