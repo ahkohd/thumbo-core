@@ -4,6 +4,7 @@
   "description": "Dead fast thumbnail library for browser and NodeJs",
   "module": "dist/thumbo.js",
   "files": [
+    "dist/**",
     "pkg/**"
   ],
   "scripts": {
