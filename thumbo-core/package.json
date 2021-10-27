@@ -35,7 +35,6 @@
   "homepage": "https://github.com/ahkohd/thumbo-core#readme",
   "devDependencies": {
     "@wasm-tool/wasm-pack-plugin": "^1.6.0",
-    "text-encoding": "^0.7.0",
     "ts-loader": "^9.2.6",
     "typescript": "^4.4.4",
     "webpack": "^5.60.0",
