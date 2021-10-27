@@ -6929,10 +6929,10 @@ through@^2.3.6, through@^2.3.8:
   resolved "https://registry.yarnpkg.com/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
   integrity sha1-DdTJ/6q8NXlgsbckEV1+Doai4fU=
 
-thumbo-core@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/thumbo-core/-/thumbo-core-1.0.5.tgz#0f722f244aff21d59ebd69064e4e7e846b4adb62"
-  integrity sha512-oFrLkZ7Q6winaFbPqp2HihpY3zDlytVJ94fJU8fn+RvLe19QySTAhyv/6CZFTtO7OzfUy1xwagopF1U67ejdhg==
+thumbo-core@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/thumbo-core/-/thumbo-core-1.0.6.tgz#dd8c4c05235ba1b6e44cd1790736a6512958a5e5"
+  integrity sha512-02mh2PKslt/Lwcru84ECxtVa8KrBVLhGmcWRQwufr9XxotEK1U8Re3x6KxO/hahfpsWV2QRjF5HjOforj/00pg==
 
 thunky@^1.0.2:
   version "1.1.0"

@@ -1,4 +1,4 @@
-import thumbo from "thumbo-core";
+import * as thumbo from "thumbo-core";
 
 const TEST_IMAGE_PATH = "../images/content/passport.jpg";
 const THUMBNAIL_SIZE = 20;
@@ -157,8 +157,4 @@ const logPerformanceStats = (
     chart.data.labels.push(len + 1);
   }
   chart.update();
-};
-
-const read = (result) => {
-  return new Uint8Array(thumbo.memory.buffer, result.img_ptr, result.img_size);
 };
