@@ -12,7 +12,7 @@
 
 ## 📖 About
 
-`thumbo-core` is a thubnail library for browsers and NodeJs, built with Rust and WebAssembly in other to achieve closer to native speed!
+`thumbo-core` is a thumbnail library for browsers and NodeJs, built with Rust and WebAssembly in other to achieve closer to native speed!
 
 It supports thumbnail generation for `Png`, `Jpeg`, `Gif`, `Ico`, `Webp` and `Svg`! `Webp` support is a work in progress.
 
